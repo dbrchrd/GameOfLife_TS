@@ -15,6 +15,21 @@ let intervals: number[] = [
   0, 10, 20, 50, 75, 100, 150, 300, 500, 750, 1000, 2000, 3000, 5000,
 ];
 
+resolution_display.innerText =
+  "X" + (resolutions[parseInt(resolution_range.value)] / 2).toString();
+interval_display.innerText =
+  intervals[parseInt(interval_range.value)].toString() + " ms";
+
+resolution_range.oninput = () => {
+  resolution_display.innerText =
+    "X" + (resolutions[parseInt(resolution_range.value)] / 2).toString();
+};
+
+interval_range.oninput = () => {
+  interval_display.innerText =
+    intervals[parseInt(interval_range.value)].toString() + " ms";
+};
+
 start_btn.onclick = () => {
   if (start_btn.innerText === "Start") start_btn.innerText = "Restart";
   ctx.clearRect(0, 0, canvas.width, canvas.height);
