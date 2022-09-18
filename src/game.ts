@@ -29,3 +29,22 @@ const buildMatrix = (cols: number, rows: number): number[][] => {
 
   return arr;
 };
+
+const countAdjacentsSquares = (
+  grid: number[][],
+  x: number,
+  y: number
+): number => {
+  let count: number = 0;
+  for (let i: number = -1; i < 2; i++) {
+    for (let j: number = -1; j < 2; j++) {
+      let col: number = (x + i + cols) % cols;
+      let row: number = (y + j + rows) % rows;
+
+      count += grid[col][row];
+    }
+  }
+
+  count -= grid[x][y];
+  return count;
+};
