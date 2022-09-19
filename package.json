@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dbrchrd/GameOfLife_TS/issues"
   },
-  "homepage": "https://github.com/dbrchrd/GameOfLife_TS#readme"
+  "homepage": "https://github.com/dbrchrd/GameOfLife_TS#readme",
+  "dependencies": {
+    "typescript": "^4.8.3"
+  }
 }
