@@ -51,6 +51,25 @@ const countAdjacentsSquares = (
 };
 
 let inte: number = 0;
+const setup = (resolution: number, interval: number): void => {
+  step = 0;
+  cols = canvas.width / resolution;
+  rows = canvas.height / resolution;
+  grid = buildMatrix(cols, rows);
+  for (let i: number = 0; i < cols; i++) {
+    for (let j: number = 0; j < rows; j++) {
+      fillSquare(i, j, neverused_square_color);
+      grid[i][j] = Math.round(Math.random());
+    }
+  }
+  if (inte !== 0) {
+    clearInterval(inte);
+    inte = setInterval(() => draw(), interval);
+  } else {
+    inte = setInterval(() => draw(), interval);
+  }
+};
+
 const draw = (): void => {
   total_count = grid
     .reduce(function (a, b) {
